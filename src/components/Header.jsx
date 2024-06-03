@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon } from "react-icons/fa";
 import { Navbar, TextInput, Button } from "flowbite-react";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = () => {
-  const path = useLocation().pathname;
+  // const path = useLocation().pathname;
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState(0);
 
@@ -70,7 +70,7 @@ const Header = () => {
             <Button gradientDuoTone="purpleToBlue">Sign In</Button>
           </Link>
           <div onClick={handleToggle} className="md:hidden">
-            {<RxHamburgerMenu className=" h-10 w-12 text-gray-300" />}
+            <RxHamburgerMenu className="h-10 w-12 text-gray-300" />
           </div>
         </div>
         <div
@@ -80,8 +80,10 @@ const Header = () => {
         >
           <Link
             className={`${
-              active === 0 ? "bg-purple-400" : "bg-purple-200"
-            } w-full text-center p-2`}
+              active === 0
+                ? " border  border-purple-400 rounded-md "
+                : "border border-purple-200 rounded-md"
+            } w-full  p-2`}
             onClick={() => setActive(0)}
             to="/"
           >
@@ -89,8 +91,10 @@ const Header = () => {
           </Link>
           <Link
             className={`${
-              active === 1 ? "bg-purple-400" : "bg-purple-200"
-            } w-full text-center p-2`}
+              active === 1
+                ? " border  border-purple-400 rounded-md "
+                : "border border-purple-200 rounded-md"
+            } w-full  p-2`}
             onClick={() => setActive(1)}
             to="/about"
           >
@@ -98,8 +102,10 @@ const Header = () => {
           </Link>
           <Link
             className={`${
-              active === 2 ? "bg-purple-400" : "bg-purple-200"
-            } w-full text-center p-2`}
+              active === 2
+                ? " border  border-purple-400 rounded-md "
+                : "border border-purple-200 rounded-md"
+            } w-full  p-2`}
             onClick={() => setActive(2)}
             to="/projects"
           >
