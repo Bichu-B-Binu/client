@@ -67,7 +67,13 @@ const Header = () => {
             <FaMoon />
           </Button>
           <Link to="/signIn">
-            <Button gradientDuoTone="purpleToBlue">Sign In</Button>
+            <Button
+              gradientDuoTone="purpleToBlue"
+              outline
+              className=" hover:from-purple-600 to-blue-600"
+            >
+              Sign In
+            </Button>
           </Link>
           <div onClick={handleToggle} className="md:hidden">
             <RxHamburgerMenu className="h-10 w-12 text-gray-300" />
